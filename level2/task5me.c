@@ -1,43 +1,57 @@
-// #include <stdio.h>
+#include <stdio.h>
 
-// int main() {
-//     int rows, cols;
+int main() {
+    int rows, cols;
+    int even=0; 
+    int odd=0;
 
-//     printf("Enter number of rows: ");
-//     scanf("%d", &rows);
-//     printf("Enter number of columns: ");
-//     scanf("%d", &cols);
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+    printf("Enter number of columns: ");
+    scanf("%d", &cols);
 
-//     int arr[rows][cols]; // Variable-Length Array (VLA)
+    int arr[rows][cols]; // Variable-Length Array (VLA)
 
-//     // Taking input
-//     printf("Enter elements for your array:\n");
-//     for (int i = 0; i < rows; i++) {
-//         for (int j = 0; j < cols; j++) {
-//             scanf("%d", &arr[i][j]);
-//         }
-//     }
+    // Taking input
+    printf("Enter elements for your array:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &arr[i][j]);
+        }
+    }
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            if(arr[i][j]%2==0){
+                even++;
+            }
+            else{
+                odd++;
+            }
+        }
+    }
+    // Printing the original array
+    printf("\n2D Array:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("%d ", arr[i][j]);
+        }
+        printf("\n");
+        printf("total even numbers in this array are: %d\n",even);
+        printf("total odd numbers in this array are: %d\n",odd);
 
-//     // Printing the original array
-//     printf("\n2D Array:\n");
-//     for (int i = 0; i < rows; i++) {
-//         for (int j = 0; j < cols; j++) {
-//             printf("%d ", arr[i][j]);
-//         }
-//         printf("\n");
-//     }
+    }
 
-//     // Printing transpose of the matrix
-//     printf("\nPrinting transpose of this matrix:\n");
-//     for (int j = 0; j < cols; j++) {  
-//         for (int i = 0; i < rows; i++) {  
-//             printf("%d ", arr[i][j]);
-//         }
-//         printf("\n");
-//     }
+    // Printing transpose of the matrix
+    printf("\nPrinting transpose of this matrix:\n");
+    for (int j = 0; j < cols; j++) {  
+        for (int i = 0; i < rows; i++) {  
+            printf("%d ", arr[i][j]);
+        }
+        printf("\n");
+    }
 
-//     return 0;
-// }
+    return 0;
+}
 
 
 // linear search
